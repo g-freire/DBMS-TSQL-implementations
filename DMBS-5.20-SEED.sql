@@ -17,12 +17,17 @@
 
 BEGIN TRANSACTION TCreateDB  
 
-	use master
-	go
-
-	create database BoatTourBusiness2
-	go 
-
+	CREATE DATABASE BoatTourBusiness2 ON PRIMARY
+	(NAME = BoatTourBusiness2,
+	FILENAME = 'C:\SQL\BoatTourBusiness2.mdf',
+	SIZE = 6MB,
+	MAXSIZE = 36MB,
+	FILEGROWTH = 10%)
+	LOG ON (
+	NAME = BoatTourBusiness2_log,
+	FILENAME = 'C:\SQL\BoatTourBusiness2.ldf',
+	SIZE = 1MB, FILEGROWTH = 1MB)
+	GO
 
 -- ROLLBACK TRAN TCreateDB;
 COMMIT TRAN TCreateDB;

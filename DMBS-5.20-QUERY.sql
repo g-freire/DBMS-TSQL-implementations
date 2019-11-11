@@ -14,12 +14,12 @@
 
 -- QUERY ZONE
 
---BEGIN TRANSACTION Q15
-	--use master
-	--go
-	--use BoatTourBusiness2
-	--go 
- --COMMIT TRANSACTION Q15
+BEGIN TRANSACTION Q15
+	use master
+	go
+	use BoatTourBusiness2
+	go 
+ COMMIT TRANSACTION Q15
 
  -- -------------------------------------------------
 -- (Q.15) Find All the and ages of all Sailors
