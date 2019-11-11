@@ -13,7 +13,7 @@
 */  
 
 
--- DDL - Domain Definition Language
+-- DDL - Data Definition Language
 
 BEGIN TRANSACTION TCreateDB  
 
@@ -23,6 +23,8 @@ BEGIN TRANSACTION TCreateDB
 	create database BoatTourBusiness2
 	go 
 
+
+-- ROLLBACK TRAN TCreateDB;
 COMMIT TRAN TCreateDB;
 
 
@@ -57,10 +59,10 @@ BEGIN TRANSACTION TCreateTables
 	)
 	go
 
---ROLLBACK TRAN @TransactionName;  
 COMMIT TRAN TCreateTables;
 go
 
+-- DML - Data  Manipulation Language
 
 BEGIN TRANSACTION TPopulateTable;  
 
@@ -111,10 +113,10 @@ select * from Sailors
 select * from Reserves
 select * from Boats 
 
-begin tran deleteTables
-	drop table Sailors
-	drop table Reserves
-	drop table Boats
-commit tran
+-- begin tran deleteTables
+-- 	drop table Sailors
+-- 	drop table Reserves
+-- 	drop table Boats
+-- commit tran
 
 
